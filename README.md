@@ -1,4 +1,4 @@
-### Task
+### Test task
 Write a form application to create a **TODO** task list, where the control styles and markup should roughly match the layout.
 You can use the default styles of radio buttons and checkboxes.
 
