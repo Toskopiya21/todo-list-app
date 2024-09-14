@@ -1,5 +1,5 @@
 import {useState, useMemo, useCallback, ChangeEvent} from 'react';
-import {TaskType} from "../state/slice/todoListSlice.ts";
+import {TaskType} from "../state/todoListSlice.ts";
 
 interface UseTaskFilterProps {
     tasks: TaskType[];

@@ -1,11 +1,12 @@
 import {Task} from "./Task.tsx";
 import {ChangeEvent, useCallback} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {removeTask, changeTaskStatus} from './../state/slice/todoListSlice.ts';
+import {removeTask, changeTaskStatus} from '../state/todoListSlice.ts';
 import {SortedOptions} from "./SortedOptions.tsx";
 import {Status} from "./Status.tsx";
 import {useTaskSorting} from "./../hooks/useTaskSorting.tsx";
 import {useTaskFilter} from "./../hooks/useTaskFilter.tsx";
+import './components.scss'
 
 export const TasksList = () => {
     const tasks = useSelector((state: any) => state.todoList.tasks);
@@ -32,17 +33,17 @@ export const TasksList = () => {
     const {  handleChangeOption, sortedTasks } = useTaskSorting(filteredTasks);
 
     return (
-        <section>
-            <span>Список задач</span>
-            <div>
-                <div>
+        <section className="tasks-list-form">
+            <h3 className="text-base font-semibold leading-7 text-gray-900 text-left py-4">Список задач</h3>
+            <div className="tasks-and-filters">
+                <div className="tasks">
                     {sortedTasks.map(task => (
                         <Task key={task.id} task={task} removeTask={handleRemoveTask} changeTaskStatus={handleChangeTaskStatus}/>
                     ))
                     }
                 </div>
 
-                <div>
+                <div className="filters">
                     <Status filterChecked={filterChecked} handleChange={handleChange}/>
 
                     <SortedOptions changeSortOption={handleChangeOption}>

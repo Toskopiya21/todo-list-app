@@ -1,5 +1,5 @@
 import {useState, useMemo, useCallback, ChangeEvent} from 'react';
-import {TaskType} from "../state/slice/todoListSlice.ts";
+import {TaskType} from "../state/todoListSlice.ts";
 
 export const useTaskSorting = (tasks: TaskType[]) => {
     const [sortedOption, setSortedOption] = useState<string>('title');
